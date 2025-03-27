@@ -1,0 +1,17 @@
+services:
+  nearby-places-recommendation-database:
+    container_name: nearby-places-recommendation-database
+    build:
+      dockerfile: Dockerfile
+      context: ./database
+    image: ckdgus1010/nearby-places-recommendation-database
+    environment:
+      - MARIADB_ROOT_PASSWORD=${SPRING_DATASOURCE_ROOT_PASSWORD}
+      - MARIADB_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - MARIADB_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - MARIADB_DATABASE_NAME=${MARIADB_DATABASE_NAME}
+    volumes:
+      - ./database/config:/etc/mysql/conf.d # DB 설정 초기화
+      - ./database/init/init.sh:/docker-entrypoint-initdb.d/init.sh
+    ports:
+      - "3306:3306"
