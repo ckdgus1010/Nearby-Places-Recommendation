@@ -46,3 +46,10 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// $ ./gradlew clean build -PKAKAO_REST_API_KEY={api key 값} 명령어로 전체 테스트 및 빌드하여 jar 파일 생성
+processTestResources {
+	filesMatching('**/application.yml') {
+		expand(project.properties)
+	}
+}
