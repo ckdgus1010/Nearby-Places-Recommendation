@@ -37,7 +37,7 @@ public class PlaceRecommendationService {
         // 주소를 위도, 경도 변환
         KakaoLocationResponseDto locationResponse = kakaoAddressService.convertAddressToCoordinate(address);
 
-        if (Objects.isNull(locationResponse) || CollectionUtils.isEmpty(locationResponse.getLoc ationDtos())) {
+        if (Objects.isNull(locationResponse) || CollectionUtils.isEmpty(locationResponse.getLocationDtos())) {
             return Collections.emptyList();
         }
 
