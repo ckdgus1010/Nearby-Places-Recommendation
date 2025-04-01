@@ -1,5 +1,8 @@
 package com.project.nearby.api.enumeration;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum CategoryGroupCode {
     MART("MT1", "대형마트"),
     CONVENIENCE_STORE("CS2", "편의점"),
@@ -22,6 +25,18 @@ public enum CategoryGroupCode {
 
     private final String code;         // 카테고리 코드
     private final String description;   // 카테고리 설명
+
+    private static final Map<String, CategoryGroupCode> descMap = new HashMap<>();
+
+    static {
+        for (CategoryGroupCode categoryGroupCode : values()) {
+            descMap.put(categoryGroupCode.getDescription(), categoryGroupCode);
+        }
+    }
+
+    public static CategoryGroupCode getCategoryGroupCode(String description) {
+        return descMap.get(description);
+    }
 
     CategoryGroupCode(String code, String description) {
         this.code = code;
