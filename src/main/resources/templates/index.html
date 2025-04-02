@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <title>장소 검색</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <form id="category-search-form" action="#" method="GET">
+            <div class="search-group">
+                <label class="label-title" for="category-group">카테고리</label>
+                <select name="category" id="category-group">
+                    <option value="MT1">대형마트</option>
+                    <option value="CS2">편의점</option>
+                    <option value="PS3">어린이집, 유치원</option>
+                    <option value="SC4">학교</option>
+                    <option value="AC5">학원</option>
+                    <option value="PK6">주차장</option>
+                    <option value="OL7">주유소, 충전소</option>
+                    <option value="SW8">지하철역</option>
+                    <option value="BK9">은행</option>
+                    <option value="CT1">문화시설</option>
+                    <option value="AG2">중개업소</option>
+                    <option value="PO3">공공기관</option>
+                    <option value="AT4">관광명소</option>
+                    <option value="AD5">숙박</option>
+                    <option value="FD6">음식점</option>
+                    <option value="CE7">카페</option>
+                    <option value="HP8">병원</option>
+                    <option value="PM9">약국</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <label class="label-title" for="search-radius">검색 반경</label>
+                <div class="radio-group" id="search-radius">
+                    <label><input type="radio" name="radius" value="500" checked> 500m</label>
+                    <label><input type="radio" name="radius" value="1000"> 1km</label>
+                    <label><input type="radio" name="radius" value="1500"> 1.5km</label>
+                    <label><input type="radio" name="radius" value="2000"> 2km</label>
+                </div>
+            </div>
+            <div class="search-group">
+                <label class="label-title" for="input-address">주소 입력</label>
+                <input
+                        type="text"
+                        name="address"
+                        id="input-address"
+                        placeholder="아래에서 주소를 검색해 주세요."
+                        value=""
+                />
+            </div>
+            <button type="submit" id="search-btn">검색</button>
+        </form>
+    </div>
+    <div id="wrap"></div>
+</div>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script th:src="@{/js/index.js}"></script>
+</body>
+</html>
