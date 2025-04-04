@@ -30,12 +30,12 @@ public enum CategoryGroupCode {
 
     static {
         for (CategoryGroupCode categoryGroupCode : values()) {
-            descMap.put(categoryGroupCode.getDescription(), categoryGroupCode);
+            descMap.put(categoryGroupCode.getCode(), categoryGroupCode);
         }
     }
 
-    public static CategoryGroupCode getCategoryGroupCode(String description) {
-        return descMap.get(description);
+    public static CategoryGroupCode getCategoryGroupCode(String code) {
+        return descMap.get(code);
     }
 
     CategoryGroupCode(String code, String description) {
