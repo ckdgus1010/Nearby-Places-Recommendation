@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
     <title>장소 검색</title>
 </head>
 <body>
 <div class="container">
     <div>
-        <form id="category-search-form" action="#" method="GET">
+        <form id="category-search-form" action="/search" method="GET">
             <div class="search-group">
                 <label class="label-title" for="category-group">카테고리</label>
                 <select name="category" id="category-group">
