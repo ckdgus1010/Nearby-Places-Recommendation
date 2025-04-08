@@ -18,7 +18,7 @@ class PlaceRecommendationServiceTest {
     private PlaceRecommendationService placeRecommendationService;
 
     private String address = "동작구 남부순환로 2089";
-    String category = "대형마트";
+    String category = "MT1";
 
     @Test
     @DisplayName("장소 추천 성공 - 유효한 값을 입력하면 정상적으로 장소 데이터를 불러옴")
